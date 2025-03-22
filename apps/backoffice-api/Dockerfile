@@ -1,5 +1,5 @@
 # Build stage
-FROM node:23-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy monorepo dependencies
@@ -14,7 +14,7 @@ WORKDIR /app/apps/backoffice-api
 RUN yarn build:backoffice
 
 # Run stage
-FROM node:23-alpine AS run
+FROM node:20-alpine AS run
 WORKDIR /app/apps/backoffice-api
 
 # Copy only the built files for backoffice-api

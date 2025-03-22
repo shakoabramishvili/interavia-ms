@@ -1,5 +1,5 @@
 # Build stage
-FROM node:23-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy monorepo dependencies
@@ -14,7 +14,7 @@ WORKDIR /app/apps/payment-api
 RUN yarn build:payment
 
 # Run stage
-FROM node:23-alpine AS run
+FROM node:20-alpine AS run
 WORKDIR /app/apps/payment-api
 
 # Copy only the built files for payment-api
