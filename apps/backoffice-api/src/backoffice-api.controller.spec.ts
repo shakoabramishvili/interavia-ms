@@ -1,17 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { backofficeApiController } from './backoffice-api.controller';
-import { backofficeApiService } from './backoffice-api.service';
+import { BackofficeApiController } from './backoffice-api.controller';
+import { BackofficeApiService } from './backoffice-api.service';
 
-describe('backofficeApiController', () => {
-  let backofficeApiController: backofficeApiController;
+describe('BackofficeApiController', () => {
+  let backofficeApiController: BackofficeApiController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [backofficeApiController],
-      providers: [backofficeApiService],
+      controllers: [BackofficeApiController],
+      providers: [BackofficeApiService],
     }).compile();
 
-    backofficeApiController = app.get<backofficeApiController>(backofficeApiController);
+    backofficeApiController = app.get<BackofficeApiController>(BackofficeApiController);
   });
 
   describe('root', () => {

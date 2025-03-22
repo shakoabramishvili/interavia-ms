@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { backofficeApiService } from './backoffice-api.service';
+import { BackofficeApiService } from './backoffice-api.service';
 
 @Controller()
-export class backofficeApiController {
-  constructor(private readonly backofficeApiService: backofficeApiService) {}
+export class BackofficeApiController {
+  constructor(private readonly backofficeApiService: BackofficeApiService) {}
 
   @Get()
   getHello(): string {

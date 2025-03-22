@@ -1,0 +1,30 @@
+services:
+  backoffice-api:
+    build:
+      context: .  # ✅ Build context must be set to the root
+      dockerfile: apps/backoffice-api/Dockerfile  # ✅ Explicitly define the Dockerfile
+    ports:
+      - "4001:4001"
+    env_file: .env
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    restart: always
+
+  payment-api:
+    build:
+      context: .  # ✅ Build context must be set to the root
+      dockerfile: apps/payment-api/Dockerfile  # ✅ Explicitly define the Dockerfile
+    ports:
+      - "4002:4002"
+    env_file: .env
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    restart: always
